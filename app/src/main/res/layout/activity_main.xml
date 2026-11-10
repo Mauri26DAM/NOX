@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#101318"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOX"
+        android:textColor="#FFFFFF"
+        android:textSize="52sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.15"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explora el cielo nocturno"
+        android:textColor="#B0BEC5"
+        android:textSize="17sp"
+        android:layout_marginBottom="35dp"/>
+
+    <Button
+        android:id="@+id/btnOscuridad"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Índice de oscuridad"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnBrujula"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Brújula"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnConstelaciones"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Constelaciones"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnDiario"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Diario de observaciones"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnCazaestrellas"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Cazaestrellas"/>
+
+</LinearLayout>
