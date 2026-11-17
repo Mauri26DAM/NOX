@@ -44,7 +44,8 @@
             android:id="@+id/durationPicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/timer_duration_label" />
+            android:contentDescription="@string/timer_duration_label"
+            android:theme="@style/ThemeOverlay.Nox.NumberPicker" />
 
         <Button
             android:id="@+id/btnMiNoche"

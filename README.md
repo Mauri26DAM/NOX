@@ -27,17 +27,21 @@ etc.) se crearán al cerrar los hitos correspondientes.
 ./gradlew assembleDebug testDebugUnitTest
 ```
 
-Las pruebas instrumentadas requieren un emulador o dispositivo Android:
+Las pruebas instrumentadas se ejecutan en un emulador o dispositivo Android:
 
 ```bash
 ./gradlew connectedDebugAndroidTest
 ```
 
-No se ha verificado aquí la ejecución en un dispositivo físico ni en emulador.
-El historial ya tiene al menos seis commits con mensajes descriptivos. Para
-cerrar NOCTIS 0.1 aún hay que ejecutar la app en emulador y dispositivo y
-aportar el informe del entorno con versiones y capturas. No se creará la etiqueta
-`v0.1` hasta completar esas comprobaciones.
+Verificado en emulador Android 17 (API 37): la compilación, las pruebas
+unitarias y las pruebas instrumentadas de Home, cancelación y conservación del
+temporizador al recrear la actividad pasan. Aún falta probar en un dispositivo
+físico y adjuntar el informe del entorno con capturas. El historial tiene al
+menos seis commits descriptivos. No se creará la etiqueta `v0.1` hasta completar
+esas comprobaciones.
+
+Consulta [docs/INFORME_ENTORNO.md](docs/INFORME_ENTORNO.md) para el entorno y las
+pruebas ejecutadas, así como las evidencias pendientes.
 
 ## Próximos hitos
 

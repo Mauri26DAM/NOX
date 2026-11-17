@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.Nox" parent="Base.Theme.Nox" />
+
+    <style name="ThemeOverlay.Nox.NumberPicker" parent="ThemeOverlay.Material3.Dark">
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#B0BEC5</item>
+    </style>
 </resources>
