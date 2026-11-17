@@ -36,7 +36,10 @@ class SectionActivity : Activity(), SensorEventListener {
         super.onCreate(savedInstanceState)
 
         section = intent.getStringExtra(EXTRA_SECTION) ?: SECTION_HOME
-        val scroll = ScrollView(this)
+        val scroll = ScrollView(this).apply {
+            setBackgroundColor(0xFF101318.toInt())
+            isFillViewport = true
+        }
         content = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER
