@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nox">
         <activity
+            android:name=".AdaptationActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".SectionActivity"
             android:exported="false" />
 
