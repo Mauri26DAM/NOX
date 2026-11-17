@@ -1,37 +1,47 @@
 # NOX / NOCTIS
 
 Aplicación Android educativa para explorar el cielo nocturno. Este repositorio
-contiene un **prototipo inicial**, no la versión final descrita en el dossier
-del proyecto NOCTIS.
+está en desarrollo por hitos; el código actual es un prototipo y no representa
+NOCTIS 1.0.
 
-## Estado actual
+## Estado del proyecto
 
-La aplicación tiene una pantalla de inicio y una pantalla de secciones. El
-prototipo incluye:
+El trabajo actual cubre buena parte del hito **NOCTIS 0.1 «Primera luz»**:
 
-- Lectura del sensor de luz para mostrar una orientación sobre la iluminación
-  ambiental. No es una medición científica del brillo del cielo.
-- Brújula basada en el sensor de rotación, si el dispositivo dispone de él.
-- Descripciones de seis constelaciones.
-- Diario de texto guardado localmente con `SharedPreferences`.
-- Minijuego sencillo controlado mediante el acelerómetro.
+- Home con acceso a «Mi noche», «Adaptación ocular» y «Acerca de».
+- Temporizador de adaptación configurable, con iniciar, pausar y reanudar.
+- El temporizador conserva su estado al recrearse la actividad y devuelve a
+  Home si se completa o se cancela.
+- Registro del ciclo de vida en Logcat e Intent implícito para abrir el enlace
+  del proyecto.
+- «Mi noche» ofrece prototipos del sensor de luz, brújula, seis constelaciones,
+  diario local de texto y Cazaestrellas.
 
-La aplicación está desarrollada actualmente en **Java y XML**. El dossier
-propone Kotlin y XML. Conviene presentar este repositorio como prototipo de
-trabajo y acordar con la profesora si se continúa sobre esta base o se adapta
-al lenguaje y a las fases requeridas.
+La app usa **Kotlin y layouts XML**. La compilación y las pruebas unitarias se
+pueden ejecutar desde la raíz:
 
-## Lo que todavía no está implementado
+```bash
+./gradlew assembleDebug testDebugUnitTest
+```
 
-Entre otros requisitos del dossier, faltan la adaptación ocular, el diario con
-fotografía y valoración, recursos para español/inglés/alemán/árabe/japonés,
-modo de visión nocturna rojo configurable, catálogo multimedia, ajustes, cuenta
-de usuario, API REST, servidor, comunidad, mapa, ranking, pruebas y
-documentación de entrega.
+Las pruebas instrumentadas requieren un emulador o dispositivo Android:
 
-No se debe etiquetar este prototipo como NOCTIS 1.0 ni afirmar que esos módulos
-están terminados. La lista sirve como punto de partida para planificar historias
-de usuario y sus evidencias.
+```bash
+./gradlew connectedDebugAndroidTest
+```
+
+No se ha verificado aquí la ejecución en un dispositivo físico ni en emulador.
+Para cerrar NOCTIS 0.1 aún hay que aportar esa evidencia y completar las
+comprobaciones de entorno e historial previstas en el dossier.
+
+## Próximos hitos
+
+Quedan por desarrollar los hitos 0.2 a 1.0 descritos en el dossier: interfaz
+completa, accesibilidad, cinco idiomas y tema nocturno rojo; diario multimedia y
+persistencia SQLite; API y servidor, cuenta, comunidad, mapa y ranking;
+catálogo multimedia, sensores avanzados, pruebas finales y documentación de
+entrega. La lectura del sensor de luz es orientativa y no equivale a una medida
+científica del brillo del cielo.
 
 ## Requisitos para ejecutar
 
@@ -41,34 +51,15 @@ de usuario y sus evidencias.
 - Abrir el proyecto desde Android Studio y esperar a que Gradle termine la
   sincronización.
 
-Para compilar desde una terminal en la raíz del proyecto:
-
-```bash
-./gradlew assembleDebug
-```
-
-En Windows:
-
-```bat
-gradlew.bat assembleDebug
-```
-
 ## Estructura principal
 
 ```text
 app/
-  src/main/
-    java/com/example/nox/   Código de las actividades
-    res/layout/             Layouts XML
-    res/values/              Recursos y tema
+  src/main/java/com/example/nox/   Actividades Kotlin
+  src/main/res/layout/             Layouts XML
+  src/main/res/values/              Recursos de texto y tema
 ```
 
 ## Git y colaboración
 
-Consulta [docs/GIT.md](docs/GIT.md) para inicializar el repositorio, subirlo a
-GitHub con seguridad y trabajar con commits pequeños y descriptivos.
-
-## Aviso de datos
-
-El índice basado en el sensor de luz es orientativo: los sensores de los móviles
-no están calibrados como medidores astronómicos del brillo del cielo.
+Consulta [docs/GIT.md](docs/GIT.md) para el flujo Git de este repositorio.
