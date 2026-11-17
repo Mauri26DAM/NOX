@@ -34,8 +34,10 @@ Las pruebas instrumentadas requieren un emulador o dispositivo Android:
 ```
 
 No se ha verificado aquí la ejecución en un dispositivo físico ni en emulador.
-Para cerrar NOCTIS 0.1 aún hay que aportar esa evidencia y completar las
-comprobaciones de entorno e historial previstas en el dossier.
+El historial ya tiene al menos seis commits con mensajes descriptivos. Para
+cerrar NOCTIS 0.1 aún hay que ejecutar la app en emulador y dispositivo y
+aportar el informe del entorno con versiones y capturas. No se creará la etiqueta
+`v0.1` hasta completar esas comprobaciones.
 
 ## Próximos hitos
 
