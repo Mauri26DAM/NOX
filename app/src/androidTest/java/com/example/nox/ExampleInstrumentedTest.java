@@ -1,26 +1,42 @@
 package com.example.nox;
 
-import android.content.Context;
-
-import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.Espresso;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.nox", appContext.getPackageName());
+    public void homeDisplaysRequiredActions() {
+        try (ActivityScenario<MainActivity> ignored =
+                     ActivityScenario.launch(MainActivity.class)) {
+            onView(withId(R.id.btnMiNoche)).check(matches(isDisplayed()));
+            onView(withId(R.id.btnAdaptacion)).check(matches(isDisplayed()));
+            onView(withId(R.id.btnAcerca)).check(matches(isDisplayed()));
+        }
+    }
+
+    @Test
+    public void adaptationReceivesDurationAndReturnsCancellation() {
+        try (ActivityScenario<MainActivity> ignored =
+                     ActivityScenario.launch(MainActivity.class)) {
+            onView(withId(R.id.btnAdaptacion)).perform(click());
+            onView(withId(R.id.countdownText)).check(matches(withText("20:00")));
+
+            Espresso.pressBack();
+
+            onView(withId(R.id.resultMessage))
+                    .check(matches(withText(R.string.adaptation_cancelled)));
+        }
     }
 }
