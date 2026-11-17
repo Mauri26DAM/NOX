@@ -20,6 +20,9 @@ El trabajo actual cubre buena parte del hito **NOCTIS 0.1 «Primera luz»**:
 La app usa **Kotlin y layouts XML**. La compilación y las pruebas unitarias se
 pueden ejecutar desde la raíz:
 
+El identificador Android es `0.1-dev`; las etiquetas NOCTIS (`v0.1`, `v0.2`,
+etc.) se crearán al cerrar los hitos correspondientes.
+
 ```bash
 ./gradlew assembleDebug testDebugUnitTest
 ```
